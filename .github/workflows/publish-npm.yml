@@ -28,8 +28,8 @@ jobs:
          env:  
            JF_URL: https://hts1.jfrog.io
          with:
-           oidc-provider-name: srish-github
-           oidc-audience: my-aud
+           oidc-provider-name: ${{ env.OIDC_PROVIDER }}
+           oidc-audience: ${{ env.OIDC_AUDIENCE }}
 
        - name: Set CLI Config
          run: jf npm-config --global=true --repo-resolve=$PLATFORM_REPO --repo-deploy=$PLATFORM_REPO
